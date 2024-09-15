@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calc;
+
+option go_package = "./";
+
+service Solver {
+    rpc Solve(SolverRequest) returns (SolverResponse) {}
+}
+
+message SolverRequest {
+    int64 a = 1;
+    string sign = 2;
+    int64 b = 3;
+}
+
+message SolverResponse {
+    double result = 1;
+}
